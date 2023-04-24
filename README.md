@@ -1,41 +1,36 @@
 WPS-Office-Font-Installation
 
+I downloaded wps-office_11.1.0.11691.XA_amd64.deb from wps-office official website. After installation I kept getting the "some formula symbols might not be displayed correctly due to missing fonts symbol"
+
 WPS' prebuild font package does not seem to install their fonts
 properly, so I hope this will help others!
 
-This script will move the folder 'special-wps-office-fonts' from the
+This set of command lines would move the downloaded/cloned fonts to your system's WPS font folder.
 
-downloaded/cloned folder to your system fonts folder.
-On the other hand, this is my VERY FIRST attempt a making my own bash
-script, so it might just be easier to install the fonts yourself by
-following these instructions:
+1a) Clone this repo somewhere and open the folder 
+1b) Download and extract the .zip GitHub automatically makes. Then open that folder. 
 
-1a) Clone this repo somewhere and open the folder 1b) Download and
-extract the .zip GitHub automatically makes. Then open that folder. 2)
-Move or Copy the folder '`special-wps-office-fonts`' to
-`/usr/share/fonts/` 3) Update your font-cache by entering these commands
-based on your distrobution: a) I think that you can also probably just
-use `sudo fc-cashe` for every distro, but here's instructions for
-specific ones that I found online. a) Mint/Ubuntu/Debian/etc Distros:
-`sudo fc-cache -f -v` b) Arch/Manjaro/Antergos/etc Distros:
-`sudo fc-cache` c) Fedora/OpenMandriva/Mageia/etc Distros:
-`sudo fc-cache -s` d) Misc Others: `sudo fc-cache`
+2) Move or Copy the folder's content to
+`/usr/share/fonts/` 
+
+3) Update your font-cache by entering the commands below
+based on your distrobution: using ==> sudo fc-cache
 
 You can also copy and paste this command into your terminal. First `cd`
 to wherever your downloaded or cloned this folder. Then type this
 depending on your distro:
 
 Mint/Ubuntu/Debian/etc
-`sudo mv -rf special-wps-office-fonts/ /usr/share/fonts/ ; sudo fc-cache -f -v ; cd`
+`sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -f -v ; cd`
 
 Arch/Manjaro/Antergos/etc 
-`sudo mv -rf special-wps-office-fonts/ /usr/share/fonts/ ; sudo fc-cache ; cd\`
+`sudo mv -f *.* /usr/share/fonts/  ; sudo fc-cache ; cd\`
 
 Fedora/OpenMandriva/Mageia/etc
-`sudo mv -rf special-wps-office-fonts/ /usr/share/fonts/ ; sudo fc-cache -s ; cd`
+`sudo mv -f *.* /usr/share/fonts/ ; sudo fc-cache -s ; cd`
 
 Other Distros
-`sudo mv -rf special-wps-office-fonts/ /usr/share/fonts/ ; sudo fc-cache ; cd`
+`sudo mv -f *.* /usr/share/fonts/  ; sudo fc-cache ; cd`
 
 ### 
 
